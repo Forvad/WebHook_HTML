@@ -29,5 +29,4 @@ async def download_html(file_name: str):
     return FileResponse(f"static/{file_name}", filename=file_name, media_type="text/html")
 
 if __name__ == "__main__":
-
     uvicorn.run(app, host="0.0.0.0", port=8000)
