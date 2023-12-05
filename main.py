@@ -22,7 +22,7 @@ async def convert_text_to_html(text: Model):
     with open(f"static/{file_name}", "w") as f:
         f.write(text.text)
     download_url = f"http://{os.getenv('SERVER_HOST')}:8000/download/{file_name}"
-    return download_url
+    return {'URL': download_url}
 
 @app.get("/download/{file_name}")
 async def download_html(file_name: str):
